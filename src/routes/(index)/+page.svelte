@@ -4,7 +4,7 @@
 	import './grid.css';
 	import HeadComponent from '$lib/HeadComponent.svelte';
 
-	// const DOWNLOAD_BASE = 'https://github.com/mistweaverco/zana-gui/releases/latest/download/';
+	const DOWNLOAD_BASE = 'https://github.com/mistweaverco/zana-gui/releases/latest/download/';
 
 	/**
 	 * @type {boolean}
@@ -41,8 +41,7 @@
 				</a>
 			</button>
 			<button class="button is-snap">
-				<!-- <a href="{DOWNLOAD_BASE}zana-gui_amd64.snap"> -->
-				<a href="https://github.com/mistweaverco/zana-gui">
+				<a href="{DOWNLOAD_BASE}zana-gui_amd64.snap">
 					<span class="icon">
 						<i class="fa-brands fa-linux"></i>
 					</span>
@@ -50,8 +49,7 @@
 				</a>
 			</button>
 			<button class="button is-appimage">
-				<!-- <a href="{DOWNLOAD_BASE}zana-gui_x86_64.AppImage"> -->
-				<a href="https://github.com/mistweaverco/zana-gui">
+				<a href="{DOWNLOAD_BASE}zana-gui_x86_64.AppImage">
 					<span class="icon">
 						<i class="fa-solid fa-gear"></i>
 					</span>
@@ -59,8 +57,7 @@
 				</a>
 			</button>
 			<button class="button is-flatpak">
-				<!-- <a href="{DOWNLOAD_BASE}zana-gui_x86_64.flatpak"> -->
-				<a href="https://github.com/mistweaverco/zana-gui">
+				<a href="{DOWNLOAD_BASE}zana-gui_x86_64.flatpak">
 					<span class="icon">
 						<i class="fa-solid fa-cube"></i>
 					</span>
@@ -100,15 +97,17 @@
 		<hr />
 
 		<div class="download-buttons">
-			<!-- <a href="https://github.com/mistweaverco/zana-gui/releases/latest/download/zana-gui-setup_x64.exe"> -->
 			<button class="button is-windows">
-				<a href="https://github.com/mistweaverco/zana-gui">
+				<a
+					href="https://github.com/mistweaverco/zana-gui/releases/latest/download/zana-gui-setup_x64.exe"
+				>
 					<span class="icon"><i class="fa-brands fa-windows"></i></span> <span>Windows</span></a
 				>
 			</button>
-			<!-- <a href="https://github.com/mistweaverco/zana-gui/releases/latest/download/zana-gui_universal.dmg"> -->
-			<button class="button is-mac"
-				><a href="https://github.com/mistweaverco/zana-gui"
+			<button class="button is-mac">
+				<a
+					href="https://github.com/mistweaverco/zana-gui/releases/latest/download/zana-gui_universal.dmg"
+				>
 					><span class="icon"><i class="fa-brands fa-apple"></i></span> <span>Mac</span></a
 				></button
 			>
