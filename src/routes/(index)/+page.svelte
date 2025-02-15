@@ -32,8 +32,7 @@
 		</button>
 		<div class="box">
 			<button class="button is-debian">
-				<!-- <a href="{DOWNLOAD_BASE}zana-gui_amd64.deb"> -->
-				<a href="https://github.com/mistweaverco/zana-gui">
+				<a href="{DOWNLOAD_BASE}zana-gui_amd64.deb">
 					<span class="icon">
 						<i class="fa-brands fa-debian"></i>
 					</span>
