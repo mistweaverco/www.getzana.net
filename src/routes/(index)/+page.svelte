@@ -107,7 +107,7 @@
 				<a
 					href="https://github.com/mistweaverco/zana-gui/releases/latest/download/zana-gui_universal.dmg"
 				>
-					><span class="icon"><i class="fa-brands fa-apple"></i></span> <span>Mac</span></a
+					<span class="icon"><i class="fa-brands fa-apple"></i></span> <span>Mac</span></a
 				></button
 			>
 			<button on:click={toggleModalLinuxDownload} class="button is-linux">
