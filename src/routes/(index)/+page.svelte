@@ -71,7 +71,7 @@
 	<div class="inner">
 		<img class="logo" src="/logo.svg" alt="Zana logo" />
 		<header>Zana</header>
-		<a href="https://neovim.getzana.net">
+		<a href="https://github.com/mistweaverco/zana.nvim">
 			<img class="badge" src="/badge-neovim.svg" alt="neovim" />
 		</a>
 		<a href="https://getzana.net/discord">
@@ -95,7 +95,7 @@
 
 		<hr />
 
-		<div class="download-buttons">
+		<div class="download-buttons" id="download">
 			<button class="button is-windows">
 				<a
 					href="https://github.com/mistweaverco/zana-gui/releases/latest/download/zana-gui-setup_x64.exe"
@@ -118,7 +118,8 @@
 			</button>
 		</div>
 		<p>
-			Zana is a <strong>minimal package manager</strong> for Neovim.
+			Zana is a <strong>minimal package manager</strong> for
+			<a href="https://github.com/mistweaverco/zana.nvim">Neovim</a>.
 			<strong>Easily install</strong> and <strong>manage</strong> LSP servers, DAP servers, linters,
 			and formatters and more.
 		</p>
@@ -131,8 +132,7 @@
 	<div class="inner">
 		<h2>Availibility</h2>
 		<p>
-			<strong>Zana</strong> GUI is currently in active development 🚀 and not yet available as an official
-			public release.
+			<strong>Zana</strong> GUI is currently in active development 🚀, but in its early stages.
 		</p>
 		<p>
 			While we are working hard to bring it to production, expect frequent changes and improvements.
@@ -155,3 +155,9 @@
 		</a>
 	</div>
 </div>
+
+<style>
+	a:visited {
+		color: #fff;
+	}
+</style>
