@@ -109,12 +109,9 @@
 			</button>
 		</div>
 		<p>
-			Zana is a <strong>minimal package manager</strong> for
-			<a href="https://github.com/mistweaverco/zana.nvim">Neovim</a>, but not limited to it.
-		</p>
-		<p>
-			<strong>Easily install</strong> and <strong>manage</strong> LSP servers, DAP servers, linters,
-			and formatters and more.
+			Zana is a minimal <strong>TUI</strong> for managing
+			<a href="https://github.com/mistweaverco/zana.nvim">Neovim</a>, LSP servers, DAP servers,
+			linters, and formatters, but not limited to just Neovim.
 		</p>
 	</div>
 </div>
