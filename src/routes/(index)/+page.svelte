@@ -109,9 +109,9 @@
 			</button>
 		</div>
 		<p>
-			Zana is a minimal <strong>TUI</strong> for managing
-			<a href="https://github.com/mistweaverco/zana.nvim">Neovim</a>, LSP servers, DAP servers,
-			linters, and formatters, but not limited to just Neovim.
+			Zana is a minimal <strong>TUI</strong> for managing LSP servers, DAP servers, linters, and
+			formatters, for <a href="https://github.com/mistweaverco/zana.nvim">Neovim</a>, but not
+			limited to just Neovim.
 		</p>
 	</div>
 </div>
