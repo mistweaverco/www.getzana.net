@@ -19,24 +19,16 @@ button.button {
 	background-color: #000;
 	color: #fff;
 }
-.button.is-debian {
-	background-color: #a80030;
-	color: #fff;
-}
 .button.is-linux {
 	background-color: #dd4814;
 	color: #fff;
 }
-.button.is-snap {
-	background-color: #dd4814;
+.button.is-primary-dl {
+	background-color: #0078d4;
 	color: #fff;
 }
-.button.is-appimage {
-	background-color: #4e9a06;
-	color: #fff;
-}
-.button.is-flatpak {
-	background-color: #81c0eb;
+.button.is-secondary-dl {
+	background-color: #5090da;
 	color: #fff;
 }
 

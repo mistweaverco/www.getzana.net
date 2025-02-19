@@ -1,18 +1,39 @@
-<script>
+<script lang="ts">
 	import './modal.css';
 	import './font-settings.css';
 	import './grid.css';
 	import HeadComponent from '$lib/HeadComponent.svelte';
 
-	const DOWNLOAD_BASE = 'https://github.com/mistweaverco/zana-gui/releases/latest/download/';
+	const DOWNLOAD_BASE = 'https://github.com/mistweaverco/zana-client/releases/latest/download/';
 
-	/**
-	 * @type {boolean}
-	 */
-	let modalLinuxDownloadIsActive = false;
+	let modalArchDownloadIsActive: boolean = false;
 
-	const toggleModalLinuxDownload = () => {
-		modalLinuxDownloadIsActive = !modalLinuxDownloadIsActive;
+	type Platform = 'windows' | 'darwin' | 'linux' | null;
+
+	let downloadPrimaryPlatform: Platform = null;
+
+	let primaryDownloadLink = '';
+	let primaryDownloadLinkText = '64 bit';
+	let secondaryDownloadLink = '';
+	let secondaryDownloadLinkText = '32 bit';
+
+	const toggleModalArchDownload = (evt: Event) => {
+		evt.preventDefault();
+		const target = evt.target as HTMLElement;
+		const btn = target.closest('button') as HTMLButtonElement;
+		downloadPrimaryPlatform = btn.dataset.platform as Platform;
+		modalArchDownloadIsActive = !modalArchDownloadIsActive;
+		primaryDownloadLink = `${DOWNLOAD_BASE}zana-${downloadPrimaryPlatform}-amd64${
+			downloadPrimaryPlatform === 'windows' ? 'exe' : ''
+		}`;
+		if (downloadPrimaryPlatform !== 'darwin') {
+			secondaryDownloadLink = `${DOWNLOAD_BASE}zana-${downloadPrimaryPlatform}-i386${
+				downloadPrimaryPlatform === 'windows' ? 'exe' : ''
+			}`;
+		} else {
+			secondaryDownloadLinkText = 'arm64';
+			secondaryDownloadLink = `${DOWNLOAD_BASE}zana-${downloadPrimaryPlatform}-arm64`;
+		}
 	};
 </script>
 
@@ -20,47 +41,25 @@
 	data={{
 		title: 'Zana',
 		description:
-			'Zana is Mason.nvim, but maintained by the community. A package manager for Neovim. Easily install and manage LSP servers, DAP servers, linters, and formatters.'
+			'Zana is Mason.nvim, but maintained by the community. A package manager for Neovim and more. Easily install and manage LSP servers, DAP servers, linters, and formatters.'
 	}}
 />
 
-<div class="modal {modalLinuxDownloadIsActive ? 'is-active' : ''}">
+<div class="modal {modalArchDownloadIsActive ? 'is-active' : ''}">
 	<div class="modal-background"></div>
 	<div class="modal-content">
-		<button on:click={toggleModalLinuxDownload} class="modal-close is-large" aria-label="close">
+		<button on:click={toggleModalArchDownload} class="modal-close is-large" aria-label="close">
 			<span aria-hidden="true">&times;</span>
 		</button>
 		<div class="box">
-			<button class="button is-debian">
-				<a href="{DOWNLOAD_BASE}zana-gui_amd64.deb">
-					<span class="icon">
-						<i class="fa-brands fa-debian"></i>
-					</span>
-					<span>.deb</span>
+			<button class="button is-primary-dl">
+				<a href={primaryDownloadLink}>
+					<span>{primaryDownloadLinkText}</span>
 				</a>
 			</button>
-			<button class="button is-snap">
-				<a href="{DOWNLOAD_BASE}zana-gui_amd64.snap">
-					<span class="icon">
-						<i class="fa-brands fa-linux"></i>
-					</span>
-					<span>.snap</span>
-				</a>
-			</button>
-			<button class="button is-appimage">
-				<a href="{DOWNLOAD_BASE}zana-gui_x86_64.AppImage">
-					<span class="icon">
-						<i class="fa-solid fa-gear"></i>
-					</span>
-					<span>.AppImage</span>
-				</a>
-			</button>
-			<button class="button is-flatpak">
-				<a href="{DOWNLOAD_BASE}zana-gui_x86_64.flatpak">
-					<span class="icon">
-						<i class="fa-solid fa-cube"></i>
-					</span>
-					<span>.flatpak</span>
+			<button class="button is-secondary-dl">
+				<a href={secondaryDownloadLink}>
+					<span>{secondaryDownloadLinkText}</span>
 				</a>
 			</button>
 		</div>
@@ -83,34 +82,26 @@
 		<a href="https://www.typescriptlang.org/">
 			<img class="badge" src="/badge-typescript.svg" alt="Made with TypeScript" />
 		</a>
-		<a href="https://www.electronjs.org/">
-			<img class="badge" src="/badge-electron.svg" alt="Made with Electron" />
+		<a href="https://go.dev/">
+			<img class="badge" src="/badge-golang.svg" alt="Made with Go" />
 		</a>
 		<a href="https://vite.dev/">
 			<img class="badge" src="/badge-vite.svg" alt="Powered by Vite" />
 		</a>
-		<a href="https://github.com/mistweaverco/zana-gui/graphs/contributors">
+		<a href="https://github.com/mistweaverco/zana-client/graphs/contributors">
 			<img class="badge" src="/badge-made-with-love.svg" alt="Made with love by the community" />
 		</a>
 
 		<hr />
 
 		<div class="download-buttons" id="download">
-			<button class="button is-windows">
-				<a
-					href="https://github.com/mistweaverco/zana-gui/releases/latest/download/zana-gui-setup_x64.exe"
-				>
-					<span class="icon"><i class="fa-brands fa-windows"></i></span> <span>Windows</span></a
-				>
+			<button on:click={toggleModalArchDownload} class="button is-windows" data-platform="windows">
+				<span class="icon"><i class="fa-brands fa-windows"></i></span> <span>Windows</span>
 			</button>
-			<button class="button is-mac">
-				<a
-					href="https://github.com/mistweaverco/zana-gui/releases/latest/download/zana-gui_universal.dmg"
-				>
-					<span class="icon"><i class="fa-brands fa-apple"></i></span> <span>Mac</span></a
-				></button
-			>
-			<button on:click={toggleModalLinuxDownload} class="button is-linux">
+			<button on:click={toggleModalArchDownload} class="button is-mac" data-platform="darwin">
+				<span class="icon"><i class="fa-brands fa-apple"></i></span> <span>Mac</span>
+			</button>
+			<button on:click={toggleModalArchDownload} class="button is-linux" data-platform="linux">
 				<span class="icon">
 					<i class="fa-brands fa-linux"></i>
 				</span>
@@ -119,7 +110,9 @@
 		</div>
 		<p>
 			Zana is a <strong>minimal package manager</strong> for
-			<a href="https://github.com/mistweaverco/zana.nvim">Neovim</a>.
+			<a href="https://github.com/mistweaverco/zana.nvim">Neovim</a>, but not limited to it.
+		</p>
+		<p>
 			<strong>Easily install</strong> and <strong>manage</strong> LSP servers, DAP servers, linters,
 			and formatters and more.
 		</p>
@@ -132,7 +125,7 @@
 	<div class="inner">
 		<h2>Availibility</h2>
 		<p>
-			<strong>Zana</strong> GUI is currently in active development 🚀, but in its early stages.
+			<strong>Zana</strong> is currently in active development 🚀, but in its early stages.
 		</p>
 		<p>
 			While we are working hard to bring it to production, expect frequent changes and improvements.
@@ -140,7 +133,7 @@
 		<p>
 			Stay tuned for
 			<a href="https://bsky.app/profile/mistweaverco.com">updates</a> and follow the project on
-			<a href="https://github.com/mistweaverco/zana-gui">Github</a>.
+			<a href="https://github.com/mistweaverco/zana-client">Github</a>.
 		</p>
 
 		<hr />
@@ -157,6 +150,7 @@
 </div>
 
 <style>
+	a:link,
 	a:visited {
 		color: #fff;
 	}
