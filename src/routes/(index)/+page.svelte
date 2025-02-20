@@ -24,11 +24,12 @@
 		downloadPrimaryPlatform = btn.dataset.platform as Platform;
 		modalArchDownloadIsActive = !modalArchDownloadIsActive;
 		primaryDownloadLink = `${DOWNLOAD_BASE}zana-${downloadPrimaryPlatform}-amd64${
-			downloadPrimaryPlatform === 'windows' ? 'exe' : ''
+			downloadPrimaryPlatform === 'windows' ? '.exe' : ''
 		}`;
 		if (downloadPrimaryPlatform !== 'darwin') {
+			secondaryDownloadLinkText = '32 bit';
 			secondaryDownloadLink = `${DOWNLOAD_BASE}zana-${downloadPrimaryPlatform}-i386${
-				downloadPrimaryPlatform === 'windows' ? 'exe' : ''
+				downloadPrimaryPlatform === 'windows' ? '.exe' : ''
 			}`;
 		} else {
 			secondaryDownloadLinkText = 'arm64';
