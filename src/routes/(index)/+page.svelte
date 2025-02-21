@@ -149,8 +149,8 @@
 		<img class="logo" src="/logo-golang-bubbles.svg" alt="Golang Bubbles logo" />
 		<h2>.. with bubbles</h2>
 		<p>
-			Bubble-Tea with <strong>bubbles</strong>, a terminal framework for Go, inspired by The Elm
-			Architecture.
+			Bubble-Tea with <strong><a href="https://github.com/charmbracelet/bubbles">bubbles</a></strong
+			>, a terminal framework for Go, inspired by The Elm Architecture.
 		</p>
 
 		<hr />
