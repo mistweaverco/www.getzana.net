@@ -136,6 +136,38 @@
 
 		<hr />
 
+		<img class="logo" src="/logo-golang-bubbletea.svg" alt="Golang Bubbletea logo" />
+		<h2>Powered by Bubble-Tea</h2>
+		<p>
+			<strong>Powered by</strong>
+			<a href="https://github.com/charmbracelet/bubbletea">Bubble-Tea</a>
+			and written in
+			<a href="https://golang.org">Go</a>.
+		</p>
+		<hr />
+
+		<img class="logo" src="/logo-golang-bubbles.svg" alt="Golang Bubbles logo" />
+		<h2>.. with bubbles</h2>
+		<p>
+			Bubble-Tea with <strong>bubbles</strong>, a terminal framework for Go, inspired by The Elm
+			Architecture.
+		</p>
+
+		<hr />
+
+		<img class="logo" src="/logo-golang-lipgloss.svg" alt="Golang Lipgloss logo" />
+		<h2>Styled with Lipgloss</h2>
+		<p>
+			<strong>Styled with</strong> <a href="https://github.com/charmbracelet/lipgloss">Lipgloss</a>,
+			a cross-platform Go styling library for creating and styling terminal output.
+		</p>
+
+		<hr />
+
+		<p>
+			From the community, for the community. <strong>Open Source</strong> and <strong>free</strong> to
+			use.
+		</p>
 		<a href="https://mistweaverco.com">
 			<img
 				class="mwbadge"
