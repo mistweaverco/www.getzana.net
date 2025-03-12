@@ -121,7 +121,7 @@
 
 <div class="container is-more">
 	<div class="inner">
-		<h2>Availibility</h2>
+		<h2>Availability</h2>
 		<p>
 			<strong>Zana</strong> is currently in active development 🚀, but in its early stages.
 		</p>
