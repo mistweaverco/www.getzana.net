@@ -1,0 +1,85 @@
+---
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Allow only one concurrent deployment,
+# skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want
+# to allow these production deployments to complete.
+concurrency:
+  group: "deploy"
+  cancel-in-progress: false
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-linux:
+    name: Deploy website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version: 24
+      - name: Cache Vite-Plus dependencies
+        uses: actions/cache@v5.0.4
+        with:
+          path: ~/.vite-plus
+          key: web-vite-plus-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            web-vite-plus-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: Install dependencies
+        run: vp install
+      - name: Create Website
+        run: ./scripts/build.sh
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.26'
+      - name: Install dependencies for recording tapes
+        run: |
+          go install github.com/charmbracelet/vhs@latest
+          sudo apt-get update && \
+            sudo apt-get install -y \
+            ffmpeg ttyd zsh bash
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Download zana CLI
+        run: |
+          mkdir -p $HOME/.local/bin
+          curl -o $HOME/.local/bin/zana -L https://github.com/mistweaverco/zana-client/releases/download/latest/zana-linux-amd64
+          chmod +x $HOME/.local/bin/zana
+      - name: Create tapes
+        shell: bash
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          ./scripts/rec-tapes.sh
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "build"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

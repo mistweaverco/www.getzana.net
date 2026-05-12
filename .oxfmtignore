@@ -1,0 +1,5 @@
+# Ignore files for NPM and YARN
+bun.lock
+bun.lockb
+package-lock.json
+yarn.lock
