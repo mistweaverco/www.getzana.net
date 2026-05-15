@@ -304,7 +304,7 @@
 	<a id="installation" aria-label="Installation section anchor"></a>
 	<div class="text-center mb-10">
 		<h1 class="text-5xl font-bold">Installation 🚀</h1>
-		<p class="pt-6">How to install the theme</p>
+		<p class="pt-6">How to install the CLI</p>
 	</div>
 	<div class="text-center mb-10">
 		<form method="GET" action="#installation">
