@@ -1,0 +1,192 @@
+{
+	"languages": [
+		{
+			"name": "Lua",
+			"icon": "devicon-lua-plain",
+			"items": [
+				{
+					"src": "/assets/snaps/languages/lua/snap.lua.png",
+					"alt": "Lua code",
+					"title": "Lua code",
+					"text": "Luca code"
+				}
+			]
+		},
+		{
+			"name": "TypeScript",
+			"icon": "devicon-typescript-plain",
+			"items": [
+				{
+					"src": "/assets/snaps/languages/typescript/snap.typescript.png",
+					"alt": "TypeScript code",
+					"title": "TypeScript code",
+					"text": "TypeScript code"
+				}
+			]
+		},
+		{
+			"name": "Go",
+			"icon": "devicon-go-plain",
+			"items": [
+				{
+					"src": "/assets/snaps/languages/golang/snap.golang.png",
+					"alt": "Go code",
+					"title": "Go code",
+					"text": "Go code"
+				}
+			]
+		},
+		{
+			"name": "Python",
+			"icon": "devicon-python-plain",
+			"items": [
+				{
+					"src": "/assets/snaps/languages/python/snap.python.png",
+					"alt": "Python code",
+					"title": "Python code",
+					"text": "Python code"
+				}
+			]
+		},
+		{
+			"name": "Docker",
+			"icon": "devicon-docker-plain",
+			"items": [
+				{
+					"src": "/assets/snaps/languages/dockerfile/snap.dockerfile.png",
+					"alt": "Dockerfile code",
+					"title": "Dockerfile code",
+					"text": "Dockerfile code"
+				}
+			]
+		},
+		{
+			"name": "Terraform",
+			"icon": "devicon-terraform-plain",
+			"items": [
+				{
+					"src": "/assets/snaps/languages/terraform/snap.terraform.png",
+					"alt": "Terraform code",
+					"title": "Terraform code",
+					"text": "Terraform code"
+				}
+			]
+		}
+	],
+	"plugins": [
+		{
+			"name": "Neogit",
+			"icon": "devicon-git-plain",
+			"items": [
+				{
+					"src": "/assets/screenshots/plugins/neogit/screenshot-neogit-status-dirty.webp",
+					"alt": "Neogit status with changes",
+					"title": "Neogit status with changes",
+					"text": "Neogit status with changes"
+				},
+				{
+					"src": "/assets/screenshots/plugins/neogit/screenshot-neogit-commit-popup.webp",
+					"alt": "Neogit commit popup",
+					"title": "Neogit commit popup",
+					"text": "Neogit commit popup"
+				},
+				{
+					"src": "/assets/screenshots/plugins/neogit/screenshot-neogit-commit-editmsg.webp",
+					"alt": "Neogit commit edit message",
+					"title": "Neogit commit edit message",
+					"text": "Neogit commit edit message"
+				},
+				{
+					"src": "/assets/screenshots/plugins/neogit/screenshot-neogit-push-popup.webp",
+					"alt": "Neogit push popup",
+					"title": "Neogit push popup",
+					"text": "Neogit push popup"
+				},
+				{
+					"src": "/assets/screenshots/plugins/neogit/screenshot-neogit-status-pushing-to-remote.webp",
+					"alt": "Neogit pushing to remote",
+					"title": "Neogit pushing to remote",
+					"text": "Neogit pushing to remote"
+				},
+				{
+					"src": "/assets/screenshots/plugins/neogit/screenshot-neogit-status-clean.webp",
+					"alt": "Neogit status clean",
+					"title": "Neogit status clean",
+					"text": "Neogit status clean"
+				}
+			]
+		},
+		{
+			"name": "Juu.nvim",
+			"icon": "devicon-neovim-plain",
+			"items": [
+				{
+					"src": "/assets/screenshots/plugins/juu.nvim/screenshot-juu-notification.webp",
+					"alt": "Juu.nvim notification",
+					"title": "Juu.nvim notification",
+					"text": "Juu.nvim notification"
+				},
+				{
+					"src": "/assets/screenshots/plugins/juu.nvim/screencast-juu-progress.webp",
+					"alt": "Juu.nvim progress",
+					"title": "Juu.nvim progress",
+					"text": "Juu.nvim progress"
+				},
+				{
+					"src": "/assets/screenshots/plugins/juu.nvim/screenshot-juu-input.webp",
+					"alt": "Juu.nvim input",
+					"title": "Juu.nvim input",
+					"text": "Juu.nvim input"
+				}
+			]
+		},
+		{
+			"name": "blink-cmp",
+			"icon": "devicon-neovim-plain",
+			"items": [
+				{
+					"src": "/assets/screenshots/plugins/blink-cmp/screenshot-blink-cmp-popup.webp",
+					"alt": "blink-cmp popup",
+					"title": "blink-cmp popup",
+					"text": "blink-cmp popup"
+				},
+				{
+					"src": "/assets/screenshots/plugins/blink-cmp/screenshot-blink-cmp-popup-variables.webp",
+					"alt": "blink-cmp popup with variables",
+					"title": "blink-cmp popup with variables",
+					"text": "blink-cmp popup with variables"
+				}
+			]
+		},
+		{
+			"name": "bafa.nvim",
+			"icon": "devicon-neovim-plain",
+			"items": [
+				{
+					"src": "/assets/screenshots/plugins/bafa.nvim/screenshot-bafa-default-ui.webp",
+					"alt": "bafa.nvim default UI",
+					"title": "bafa.nvim default UI",
+					"text": "bafa.nvim default UI"
+				},
+				{
+					"src": "/assets/screenshots/plugins/bafa.nvim/screenshot-bafa-ui-markers.webp",
+					"alt": "bafa.nvim UI with modified and marked for deletion markers",
+					"title": "bafa.nvim UI with modified and marked for deletion markers",
+					"text": "bafa.nvim UI with modified and marked for deletion markers"
+				},
+				{
+					"src": "/assets/screenshots/plugins/bafa.nvim/screenshot-bafa-ui-jump-labels.webp",
+					"alt": "bafa.nvim UI with jump labels",
+					"title": "bafa.nvim UI with jump labels",
+					"text": "bafa.nvim UI with jump labels"
+				},
+				{
+					"src": "/assets/screenshots/plugins/bafa.nvim/screenshot-bafa-ui-jump-delete-labels.webp",
+					"alt": "bafa.nvim UI with jump labels to mark buffers for deletion",
+					"title": "bafa.nvim UI with jump labels to mark buffers for deletion",
+					"text": "bafa.nvim UI with jump labels to mark buffers for deletion"
+				}
+			]
+		}
+	]
+}

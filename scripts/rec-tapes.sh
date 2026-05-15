@@ -5,7 +5,7 @@ set -eo pipefail
 if [ -n "$1" ]; then
 	TAPES="$1"
 else
-	TAPES="$(find tapes -type f -name "*.tape" | head -n 1)"
+	TAPES="$(find tapes -type f -name "*.tape")"
 fi
 
 convert_gif_to_webm() {
@@ -15,11 +15,15 @@ convert_gif_to_webm() {
   done
 }
 
+base_asset_dir="static/assets"
+
 for tape in $TAPES; do
 	ZANA_HOME="$(mktemp -d)"
 	export ZANA_HOME
 	base_name_with_ext=$(basename "$tape")
-	output="static/assets/tapes/$(basename "${tape%.*}.gif")"
+	dir_name=$(dirname "$tape")
+	mkdir -p "$base_asset_dir/$dir_name"
+	output="$base_asset_dir/$dir_name/$(basename "${tape%.*}.gif")"
 	echo "▶️ Recording 📼 tape -> $base_name_with_ext..."
 	vhs -o "$output" < "$tape"
 	convert_gif_to_webm "$output"
